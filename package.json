@@ -1,0 +1,26 @@
+{
+  "name": "mono-starter",
+  "description": "pnpm and nx monorepo starter",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "preinstall": "npx only-allow pnpm",
+    "postinstall": "pnpm --filter components --filter starter-graphql build",
+    "changeset": "changeset",
+    "build": "nx affected --target=build --base=main",
+    "lint": "nx affected --target=lint --base=main",
+    "test": "nx affected --target=test --base=main",
+    "nx": "nx",
+    "view-graph": "pnpm exec nx graph"
+  },
+  "engines": {
+    "node": ">=16",
+    "pnpm": ">=7"
+  },
+  "devDependencies": {
+    "@changesets/cli": "2.26.1",
+    "nx": "16.2.1",
+    "rimraf": "5.0.1",
+    "typescript": "5.0.4"
+  }
+}

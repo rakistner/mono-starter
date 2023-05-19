@@ -1,0 +1,14 @@
+schema:
+  - "src/schema/*.{ts,graphql}"
+documents:
+  - "src/**/*.{ts,graphql}"
+generates:
+  src/types/types.ts:
+    plugins:
+      - typescript
+      - typescript-resolvers
+  src/types/operations.ts:
+    plugins:
+      - typescript
+      - typescript-operations
+      - typed-document-node

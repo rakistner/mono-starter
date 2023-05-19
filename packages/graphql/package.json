@@ -1,0 +1,48 @@
+{
+  "name": "starter-graphql",
+  "version": "0.1.0",
+  "private": true,
+  "files": [
+    "dist"
+  ],
+  "exports": {
+    "./*": {
+      "import": {
+        "types": "./dist/*.d.ts",
+        "default": "./dist/*.js"
+      }
+    }
+  },
+  "typesVersions": {
+    "*": {
+      "*": [
+        "./dist/*.d.ts"
+      ]
+    }
+  },
+  "scripts": {
+    "dev": "tsc --watch",
+    "build": "tsc",
+    "clean": "rimraf dist",
+    "lint": "eslint ./src",
+    "test": "exit 0",
+    "generate": "graphql-codegen"
+  },
+  "dependencies": {
+    "@types/node": "20.2.1",
+    "eslint": "8.40.0",
+    "eslint-config-next": "13.4.2",
+    "graphql": "16.6.0",
+    "graphql-tag": "2.12.6",
+    "tsconfig": "workspace:*",
+    "typescript": "5.0.4"
+  },
+  "devDependencies": {
+    "@graphql-codegen/cli": "3.3.1",
+    "@graphql-codegen/typed-document-node": "4.0.1",
+    "@graphql-codegen/typescript": "3.0.4",
+    "@graphql-codegen/typescript-operations": "3.0.4",
+    "@graphql-codegen/typescript-resolvers": "3.2.1",
+    "@graphql-typed-document-node/core": "3.2.0"
+  }
+}
