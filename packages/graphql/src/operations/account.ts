@@ -1,7 +1,7 @@
 import { DocumentNode } from "graphql";
 import gql from "graphql-tag";
 
-const getAccount: DocumentNode = gql`
+export const getAccount: DocumentNode = gql`
   query getAccount($id: String) {
     getAccount(id: $id) {
       id
@@ -10,4 +10,11 @@ const getAccount: DocumentNode = gql`
   }
 `;
 
-export default getAccount;
+export const saveAccount: DocumentNode = gql`
+  mutation saveAccount($input: AccountInput) {
+    saveAccount(input: $input) {
+      id
+      name
+    }
+  }
+`;

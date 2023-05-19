@@ -7,6 +7,9 @@ const resolvers = {
   Query: {
     ...accountResolver.Query,
   },
+  Mutation: {
+    ...accountResolver.Mutation,
+  },
 };
 
 const server = new ApolloServer({

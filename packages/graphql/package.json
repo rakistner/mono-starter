@@ -22,11 +22,11 @@
   },
   "scripts": {
     "dev": "tsc --watch",
-    "build": "tsc",
+    "build": "pnpm generate && tsc",
     "clean": "rimraf dist",
     "lint": "eslint ./src",
     "test": "exit 0",
-    "generate": "graphql-codegen"
+    "generate": "graphql-codegen --config ./codegen.yml"
   },
   "dependencies": {
     "@types/node": "20.2.1",

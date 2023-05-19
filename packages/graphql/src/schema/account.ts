@@ -6,8 +6,17 @@ const accountSchema = gql`
     name: String
   }
 
+  input AccountInput {
+    id: ID
+    name: String
+  }
+
   type Query {
     getAccount(id: String): Account
+  }
+
+  type Mutation {
+    saveAccount(input: AccountInput): Account
   }
 `;
 
